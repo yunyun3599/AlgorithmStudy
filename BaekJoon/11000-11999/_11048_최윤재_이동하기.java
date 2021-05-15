@@ -7,8 +7,6 @@ public class _11048_최윤재_이동하기 {
 	static int width;
 	static int[][] map;
 	static int[][] dp;
-	static int[] axis_x = {0,1,1};
-	static int[] axis_y = {1,0,1};
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,8 +21,8 @@ public class _11048_최윤재_이동하기 {
 				map[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
-		
-		for(int i=1; i<height+1; i++) {
+		//////////////////////////////////////////////////////////입력
+		for(int i=1; i<height+1; i++) {			//dp 수행 좌, 상, 좌상
 			for(int j=1; j<width+1; j++) {
 				dp[i][j] = Math.max(dp[i-1][j-1], Math.max(dp[i][j-1], dp[i-1][j])) + map[i][j];
 			}
